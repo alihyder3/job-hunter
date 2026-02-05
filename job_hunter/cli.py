@@ -142,15 +142,13 @@ def main() -> None:
         print("No jobs found matching your criteria.")
         return
     
-    exporter = DataExporter()
-    
     if args.format in ["csv", "both"]:
         csv_filename = f"{args.output}.csv"
-        exporter.save_as_csv(results, csv_filename)
+        DataExporter.save_as_csv(results, csv_filename)
     
     if args.format in ["xlsx", "both"]:
         xlsx_filename = f"{args.output}.xlsx"
-        exporter.save_as_xlsx(results, xlsx_filename)
+        DataExporter.save_as_xlsx(results, xlsx_filename)
     
     print("\n=== Search Complete ===")
 
